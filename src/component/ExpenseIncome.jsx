@@ -4,6 +4,7 @@ import { GlobalContext } from '../context/GlobalState'
 function ExpenseIncome() {
   const { transactions } = useContext(GlobalContext); 
   const amounts = transactions.map(transaction => transaction.amount );
+  // console.log('Amounts ', amounts);
   const income = amounts
               .filter(item => item > 0)
               .reduce((acc, item) => (acc += item), 0)
